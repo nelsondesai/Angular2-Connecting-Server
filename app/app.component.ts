@@ -13,7 +13,11 @@ import {OnInit} from 'angular2/core';
 export class AppComponent implements OnInit{
    constructor(private _postService: PostService)
    {
-       
+       this._postService.createPost({
+           userId:1,
+           title:'a',
+           body:'b'
+       }).subscribe( post => console.log(post));;
    }
    ngOnInit()
    {
