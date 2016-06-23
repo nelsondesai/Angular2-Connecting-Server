@@ -3,14 +3,16 @@ import {Component} from 'angular2/core';
 import {PostService} from './post.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {OnInit} from 'angular2/core';
-
+import {GitHubComponent} from'./github.component';
 @Component({
     selector: 'my-app',
     template: `<div *ngIf="isLoading">
-        <i class="fa fa-spinner fa-spin fa-3x"></i>
-    </div>                
+                    <i class="fa fa-spinner fa-spin fa-3x"></i>
+               </div>
+               <github-profile></github-profile>                
     `,
-    providers:[PostService,  HTTP_PROVIDERS]
+    providers:[PostService,  HTTP_PROVIDERS],
+    directives:[GitHubComponent]
 })
 export class AppComponent implements OnInit{
    isLoading = true
