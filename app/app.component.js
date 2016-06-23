@@ -36,7 +36,7 @@ System.register(['angular2/core', './post.service', 'angular2/http'], function(e
                 }
                 AppComponent.prototype.ngOnInit = function () {
                     this._postService.getPosts()
-                        .subscribe(function (post) { return console.log(post); });
+                        .subscribe(function (post) { return console.log(post[0].title); });
                 };
                 AppComponent = __decorate([
                     core_1.Component({

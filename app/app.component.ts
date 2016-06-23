@@ -22,6 +22,6 @@ export class AppComponent implements OnInit{
    ngOnInit()
    {
         this._postService.getPosts()
-        .subscribe( post => console.log(post));
+        .subscribe( post => console.log(post[0].title));
    }
 }
